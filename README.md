@@ -6,7 +6,7 @@ Tools for detecting the type of a software license.
 Example
 -------
 
-    $ python python/detect_license.py examples/jekyll.LICENSE 
+    detect-license$ ./python/detect_license.py --url https://raw.github.com/mojombo/jekyll/master/LICENSE
     Author: Tom Preston-Werner
     Year: 2008
     Type: MIT License
