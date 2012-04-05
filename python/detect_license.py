@@ -1,13 +1,18 @@
+#!/usr/bin/python
+
 import re
+import urllib
 
 
 RE_YEAR_AND_AUTHOR = re.compile('Copyright.*(\d{4})\s([\w\s-]*\w)', flags=re.IGNORECASE)
 RE_MIT = re.compile('The MIT License', flags=re.IGNORECASE)
 
 
-def detect_license(filename=None):
+def detect_license(filename=None, url=None):
   if filename:
     reader = open(filename, 'r')
+  elif url:
+    reader = urllib.urlopen(url)
   if reader:
     license = dict()
     for line in reader:
@@ -22,12 +27,12 @@ def detect_license(filename=None):
 
 
 if __name__ == '__main__':
-  import sys
-  if len(sys.argv) < 2:
-    print "Usage: %s license-file" % sys.argv[0]
-    sys.exit()
-  filename = sys.argv[1]
-  license = detect_license(filename=filename)
+  import argparse
+  parser = argparse.ArgumentParser(description='Detect license')
+  parser.add_argument('-f', '--filename') 
+  parser.add_argument('-u', '--url')
+  args = parser.parse_args()
+  license = detect_license(**vars(args))
   if license:
     if 'author' in license:
       print "Author: %s" % license['author']
