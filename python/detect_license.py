@@ -8,7 +8,7 @@ RE_YEAR_AND_AUTHOR = re.compile('Copyright.*(\d{4})\s([\w\s-]*\w)', flags=re.IGN
 RE_MIT = re.compile('The MIT License', flags=re.IGNORECASE)
 
 
-def detect_license(filename=None, url=None):
+def detect_license(filename=None, url=None, reader=None):
   if filename:
     reader = open(filename, 'r')
   elif url:
