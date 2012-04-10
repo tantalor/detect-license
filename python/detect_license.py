@@ -6,6 +6,7 @@ import urllib
 
 RE_YEAR_AND_AUTHOR = re.compile('Copyright.*(\d{4})\s([\w\s-]*\w)', flags=re.IGNORECASE)
 RE_MIT = re.compile('The MIT License', flags=re.IGNORECASE)
+RE_GPL = re.compile('GNU GENERAL PUBLIC LICENSE', flags=re.IGNORECASE)
 
 
 def detect_license(filename=None, url=None, reader=None):
@@ -23,6 +24,8 @@ def detect_license(filename=None, url=None, reader=None):
         license['author'] = author
       if RE_MIT.search(line):
         license['type'] = 'MIT License'
+      if RE_GPL.search(line):
+        license['type'] = 'GPL'
   return license
 
 
