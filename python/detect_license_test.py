@@ -14,6 +14,10 @@ class DetectLicenseTestCase(unittest.TestCase):
     license = detect_license(reader = ['GNU GENERAL PUBLIC LICENSE', 'Blah blah blah.'])
     self.assertEquals(license['type'], 'GPL')
   
+  def test_gpl_version_type(self):
+    license = detect_license(reader = ['GNU GENERAL PUBLIC LICENSE', 'Version 2, June 1991'])
+    self.assertEquals(license['type'], 'GPLv2')
+  
   def test_year_and_author(self):
     license = detect_license(reader = ['Copyright 2012 Joe Programmer'])
     self.assertEquals(license['author'], 'Joe Programmer')
