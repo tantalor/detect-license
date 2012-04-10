@@ -10,9 +10,6 @@ RE_GPL = re.compile('GNU GENERAL PUBLIC LICENSE', flags=re.IGNORECASE)
 RE_AGPL = re.compile('GNU AFFERO GENERAL PUBLIC LICENSE', flags=re.IGNORECASE)
 RE_VERSION = re.compile('Version (\d+)', flags=re.IGNORECASE)
 
-MIT_LICENSE = 'MIT'
-GPL = 'GPL'
-AGPL = 'AGPL'
 
 def detect_license(filename=None, url=None, reader=None):
   if filename:
@@ -29,11 +26,11 @@ def detect_license(filename=None, url=None, reader=None):
         license['author'] = author
       if 'type' not in license:
         if RE_MIT.search(line):
-          license['type'] = MIT_LICENSE
+          license['type'] = 'MIT'
         if RE_GPL.search(line):
-          license['type'] = GPL
+          license['type'] = 'GPL'
         if RE_AGPL.search(line):
-          license['type'] = AGPL
+          license['type'] = 'AGPL'
       if 'version' not in license:
         version_match = RE_VERSION.search(line)
         if version_match:
