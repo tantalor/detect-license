@@ -34,11 +34,10 @@ def detect_license(filename=None, url=None, reader=None):
           license['type'] = GPL
         if RE_AGPL.search(line):
           license['type'] = AGPL
-      if 'version' not in license and 'type' in license:
+      if 'version' not in license:
         version_match = RE_VERSION.search(line)
         if version_match:
           (version,) = version_match.groups()
-          license['type'] = 'v'.join([license['type'], version])
           license['version'] = version
   return license
 
