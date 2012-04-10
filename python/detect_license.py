@@ -38,7 +38,6 @@ if __name__ == '__main__':
       print "Author: %s" % license['author']
     if 'year' in license:
       print "Year: %s" % license['year']
-    if 'type' in license:
-      print "Type: %s" % license['type']
+    print "Type: %s" % license.get('type', 'Unknown')
   else:
     print "Failed to detect a license"
