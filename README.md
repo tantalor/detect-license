@@ -18,6 +18,7 @@ Supported Licenses
 ------------------
 
  * MIT License
+ * GPL General Public License
 
 Supported Languages
 -------------------
