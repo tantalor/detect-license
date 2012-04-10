@@ -18,7 +18,8 @@ Supported Licenses
 ------------------
 
  * MIT License
- * GPL General Public License
+ * GNU General Public License (GPL)
+ * Affero General Public License (AGPL)
 
 Supported Languages
 -------------------
