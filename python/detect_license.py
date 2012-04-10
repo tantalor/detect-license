@@ -10,7 +10,7 @@ RE_GPL = re.compile('GNU GENERAL PUBLIC LICENSE', flags=re.IGNORECASE)
 RE_AGPL = re.compile('GNU AFFERO GENERAL PUBLIC LICENSE', flags=re.IGNORECASE)
 RE_VERSION = re.compile('Version (\d+)', flags=re.IGNORECASE)
 
-MIT_LICENSE = 'MIT License'
+MIT_LICENSE = 'MIT'
 GPL = 'GPL'
 AGPL = 'AGPL'
 

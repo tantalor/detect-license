@@ -8,7 +8,7 @@ class DetectLicenseTestCase(unittest.TestCase):
   
   def test_mit_type(self):
     license = detect_license(reader = ['The MIT License', 'Blah blah blah.'])
-    self.assertEquals(license['type'], 'MIT License')
+    self.assertEquals(license['type'], 'MIT')
   
   def test_gpl_type(self):
     license = detect_license(reader = ['GNU GENERAL PUBLIC LICENSE', 'Blah blah blah.'])
