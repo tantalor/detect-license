@@ -25,10 +25,11 @@ def detect_license(filename=None, url=None, reader=None):
         (year, author) = year_and_author.groups()
         license['year'] = year
         license['author'] = author
-      if RE_MIT.search(line):
-        license['type'] = MIT_LICENSE
-      if RE_GPL.search(line):
-        license['type'] = GNU_LICENSE
+      if 'type' not in license:
+        if RE_MIT.search(line):
+          license['type'] = MIT_LICENSE
+        if RE_GPL.search(line):
+          license['type'] = GNU_LICENSE
       if 'version' not in license and 'type' in license and license['type'] == GNU_LICENSE:
         version_match = RE_VERSION.search(line)
         if version_match:
