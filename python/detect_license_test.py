@@ -6,7 +6,7 @@ import unittest
 
 class DetectLicenseTestCase(unittest.TestCase):
   
-  def test_license_type(self):
+  def test_mit_type(self):
     license = detect_license(reader = ['The MIT License', 'Blah blah blah.'])
     self.assertEquals(license['type'], 'MIT License')
     
