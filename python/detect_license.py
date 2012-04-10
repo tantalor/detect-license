@@ -8,6 +8,8 @@ RE_YEAR_AND_AUTHOR = re.compile('Copyright.*(\d{4})\s([\w\s-]*\w)', flags=re.IGN
 RE_MIT = re.compile('The MIT License', flags=re.IGNORECASE)
 RE_GPL = re.compile('GNU GENERAL PUBLIC LICENSE', flags=re.IGNORECASE)
 
+MIT_LICENSE = 'MIT License'
+GNU_LICENSE = 'GPL'
 
 def detect_license(filename=None, url=None, reader=None):
   if filename:
@@ -23,9 +25,9 @@ def detect_license(filename=None, url=None, reader=None):
         license['year'] = year
         license['author'] = author
       if RE_MIT.search(line):
-        license['type'] = 'MIT License'
+        license['type'] = MIT_LICENSE
       if RE_GPL.search(line):
-        license['type'] = 'GPL'
+        license['type'] = GNU_LICENSE
   return license
 
 
