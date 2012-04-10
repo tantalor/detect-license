@@ -19,6 +19,11 @@ class DetectLicenseTestCase(unittest.TestCase):
     self.assertEquals(license['type'], 'GPL')
     self.assertEquals(license['version'], '2')
   
+  def test_gpl2_short_type(self):
+    license = detect_license(reader = ['GNU GPL version 2'])
+    self.assertEquals(license['type'], 'GPL')
+    self.assertEquals(license['version'], '2')
+  
   def test_agpl3_type(self):
     license = detect_license(reader = ['GNU AFFERO GENERAL PUBLIC LICENSE', 'Version 3, 19 November 2007'])
     self.assertEquals(license['type'], 'AGPL')
