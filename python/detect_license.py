@@ -7,10 +7,12 @@ import urllib
 RE_YEAR_AND_AUTHOR = re.compile('Copyright.*(\d{4})\s([\w\s-]*\w)', flags=re.IGNORECASE)
 RE_MIT = re.compile('The MIT License', flags=re.IGNORECASE)
 RE_GPL = re.compile('GNU GENERAL PUBLIC LICENSE', flags=re.IGNORECASE)
+RE_AGPL = re.compile('GNU AFFERO GENERAL PUBLIC LICENSE', flags=re.IGNORECASE)
 RE_VERSION = re.compile('Version (\d+)', flags=re.IGNORECASE)
 
 MIT_LICENSE = 'MIT License'
-GNU_LICENSE = 'GPL'
+GPL = 'GPL'
+AGPL = 'AGPL'
 
 def detect_license(filename=None, url=None, reader=None):
   if filename:
@@ -29,12 +31,15 @@ def detect_license(filename=None, url=None, reader=None):
         if RE_MIT.search(line):
           license['type'] = MIT_LICENSE
         if RE_GPL.search(line):
-          license['type'] = GNU_LICENSE
-      if 'version' not in license and 'type' in license and license['type'] == GNU_LICENSE:
+          license['type'] = GPL
+        if RE_AGPL.search(line):
+          license['type'] = AGPL
+      if 'version' not in license and 'type' in license:
         version_match = RE_VERSION.search(line)
         if version_match:
           (version,) = version_match.groups()
           license['type'] = 'v'.join([license['type'], version])
+          license['version'] = version
   return license
 
 
