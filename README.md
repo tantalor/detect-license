@@ -6,13 +6,22 @@ Tools for detecting the type, author, and year of a software license.
 Note that the author of a license may be different than the author of the software.
 For example, GPLv2 licenses are commonly attributed to the Free Software Foundation, Inc.
 
-Example
--------
+Examples
+--------
+
+Jekyll's MIT license,
 
     detect-license$ ./python/detect_license.py --url https://raw.github.com/mojombo/jekyll/master/LICENSE
     Author: Tom Preston-Werner
     Year: 2008
-    Type: MIT License
+    Type: MIT
+
+jQuery's GPLv2 license,
+
+    ./python/detect_license.py --url https://raw.github.com/jquery/jquery/master/GPL-LICENSE.txt
+    Author: Free Software Foundation
+    Year: 1991
+    Type: GPLv2
 
 Supported Licenses
 ------------------
