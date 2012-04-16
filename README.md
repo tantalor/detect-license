@@ -6,6 +6,9 @@ Tools for detecting the type, author, and year of a software license.
 Note that the author of a license may be different than the author of the software.
 For example, GPLv2 licenses are commonly attributed to the Free Software Foundation, Inc.
 
+This project was motivated by Thomas Fuchs' _[Why I’d like a “license type” setting for GitHub projects
+]([http://mir.aculo.us/2012/04/05/why-id-like-a-license-type-setting-for-github-projects/)_, 5 April 2012.
+
 Examples
 --------
 
