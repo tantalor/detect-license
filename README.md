@@ -30,7 +30,7 @@ Supported Licenses
  * GNU General Public License (GPL)
  * Affero General Public License (AGPL)
 
-Supported Languages
--------------------
+Requirements
+------------
 
- * Python
+ * Python 2.5 (or better)
