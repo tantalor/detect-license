@@ -11,14 +11,14 @@ Examples
 
 Jekyll's MIT license,
 
-    detect-license$ ./python/detect_license.py --url https://raw.github.com/mojombo/jekyll/master/LICENSE
+    detect-license$ ./lib/detect_license.py --url https://raw.github.com/mojombo/jekyll/master/LICENSE
     Author: Tom Preston-Werner
     Year: 2008
     Type: MIT
 
 jQuery's GPLv2 license,
 
-    ./python/detect_license.py --url https://raw.github.com/jquery/jquery/master/GPL-LICENSE.txt
+    ./lib/detect_license.py --url https://raw.github.com/jquery/jquery/master/GPL-LICENSE.txt
     Author: Free Software Foundation
     Year: 1991
     Type: GPLv2
