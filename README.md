@@ -14,6 +14,20 @@ Installing
 
     $ (sudo) python setup.py install
 
+Usage
+-----
+
+    $ detect_license.py --help
+    usage: detect_license.py [-h] [-f FILENAME] [-u URL]
+
+    Detect license
+
+    optional arguments:
+      -h, --help            show this help message and exit
+      -f FILENAME, --filename FILENAME
+      -u URL, --url URL
+
+
 Examples
 --------
 
