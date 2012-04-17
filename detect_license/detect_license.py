@@ -36,7 +36,7 @@ def detect_license(filename=None, url=None, reader=None):
         if version_match:
           (version,) = version_match.groups()
           license['version'] = version
-  return license
+    return license
 
 
 if __name__ == '__main__':
@@ -45,15 +45,18 @@ if __name__ == '__main__':
   parser.add_argument('-f', '--filename') 
   parser.add_argument('-u', '--url')
   args = parser.parse_args()
-  license = detect_license(**vars(args))
-  if license:
-    if 'author' in license:
-      print "Author: %s" % license['author']
-    if 'year' in license:
-      print "Year: %s" % license['year']
-    if 'version' in license and 'type' in license:
-      print "Type: %sv%s" % (license['type'], license['version'])
-    else:
-      print "Type: %s" % license.get('type', 'Unknown')
+  if not args.filename or args.url:
+    parser.print_help()
   else:
-    print "Failed to detect a license"
+    license = detect_license(**vars(args))
+    if license:
+      if 'author' in license:
+        print "Author: %s" % license['author']
+      if 'year' in license:
+        print "Year: %s" % license['year']
+      if 'version' in license and 'type' in license:
+        print "Type: %sv%s" % (license['type'], license['version'])
+      else:
+        print "Type: %s" % license.get('type', 'Unknown')
+    else:
+      print "Failed to detect a license"
