@@ -9,19 +9,24 @@ For example, GPLv2 licenses are commonly attributed to the Free Software Foundat
 This project was motivated by Thomas Fuchs' _[Why I’d like a “license type” setting for GitHub projects
 ]([http://mir.aculo.us/2012/04/05/why-id-like-a-license-type-setting-for-github-projects/)_, 5 April 2012.
 
+Installing
+----------
+
+    $ (sudo) python setup.py install
+
 Examples
 --------
 
 Jekyll's MIT license,
 
-    detect-license$ ./lib/detect_license.py --url https://raw.github.com/mojombo/jekyll/master/LICENSE
+    $ detect_license.py --url https://raw.github.com/mojombo/jekyll/master/LICENSE
     Author: Tom Preston-Werner
     Year: 2008
     Type: MIT
 
 jQuery's GPLv2 license,
 
-    ./lib/detect_license.py --url https://raw.github.com/jquery/jquery/master/GPL-LICENSE.txt
+    $ detect_license.py --url https://raw.github.com/jquery/jquery/master/GPL-LICENSE.txt
     Author: Free Software Foundation
     Year: 1991
     Type: GPLv2

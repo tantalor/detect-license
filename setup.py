@@ -9,4 +9,5 @@ setup(
   author_email='john.tantalo@gmail.com',
   url='http://github.com/tantalor/detect_license',
   packages=['detect_license'],
+  scripts=['detect_license/detect_license.py']
 )
